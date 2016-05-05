@@ -1,0 +1,27 @@
+html
+  head
+    title WebSwitch
+  body
+    h1 WebSwitch
+    p. 
+      WebSwitch is a small application for setting and retrieving temporary switch values in a store (Redis for the moment) 
+   
+    h2 Usage
+    
+    h3 Set switch using GET
+    p.
+      With the application key set to 'WebSwitch' and the following querry string passed:
+      /setSwitch?key1=abc&key2=123&value=true will create a key called 'WebSwitchabc123' and set its' value to 'true'
+    
+    h3 Set switch using POST
+    p.
+      Posting key value pairs of key1=abc and key2=123 to /setSwitch will create a key called 'WebSwitchabc123' and set its' value to 'true'
+    
+    h3 Get switch value 
+    p.
+      A call to /setSwitch?key1=abc&key2=123&value=true will return 'true' if the switch has been set.  
+   
+p.   
+  Embed as a link, in an email for example: <br />
+  <a href="/setSwitch?emailid=abc123&value=unsubscribe">Unsubscribe</a> <br />
+  <a href="/setSwitch?emailid=abc123&value=recieve">Keep recieving</a> <br />

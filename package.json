@@ -1,0 +1,17 @@
+{
+  "name": "webswitch",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "pug": "^2.0.0-alpha5",
+    "redis": "^2.6.0-1"
+  }
+}
