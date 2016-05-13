@@ -9,7 +9,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 var redis = require("redis"),
-    client = redis.createClient();
+    client = redis.createClient({host: config.redis.host });	
+	  client.auth(config.redis.password);
 
 app.set('view engine', 'pug');
 
@@ -22,7 +23,7 @@ app.get('/setSwitch', function(req,res){
   var value = req.query.value;
 
   client.set(config.appkey + key, value, redis.print);
-  res.render('setSwitch');
+  res.render('setSwitch', {key:key, value: value});
 });
 
 app.post('/setSwitch', function(req,res){ 
